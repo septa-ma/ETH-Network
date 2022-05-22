@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mariam-asaD/social-supplement-project/issues"
   },
-  "homepage": "https://github.com/mariam-asaD/social-supplement-project#readme"
+  "homepage": "https://github.com/mariam-asaD/social-supplement-project#readme",
+  "dependencies": {
+    "web3": "^1.7.3"
+  }
 }
