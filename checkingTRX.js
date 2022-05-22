@@ -24,7 +24,7 @@ class checkingTRX {
             if (block != null && block.transactions != null) {
 
                 // loop trough block's trxs
-                for (let txHash of block.transactions) { // check trxhash here!!
+                for (let txHash of block.transactions) {
                     let tx = await this.web3.eth.getTransaction(txHash);
                     console.log('Transaction found on block: ' + number);
                     console.log({address: tx.from, value: this.web3.utils.fromWei(tx.value, 'ether'), timestamp: new Date()});
