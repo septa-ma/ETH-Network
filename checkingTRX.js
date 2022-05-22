@@ -12,8 +12,8 @@ class checkingTRX {
     }
 
     // checking the block
-    async checkBlock(trxHash) {
-        let block = await this.web3.eth.getBlock(trxHash);
+    async checkBlock(data) {
+        let block = await this.web3.eth.getBlock(data);
         if ( block == null ) {
             console.log('Could not find a block');
         } else {
