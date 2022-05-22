@@ -14,22 +14,26 @@ class checkingTRX {
     // checking the block
     async checkBlock(trxHash) {
         let block = await this.web3.eth.getBlock(trxHash);
-        let number = block.number;
-        console.log('Finding a block ' + number);
-        
-        // if the block was found and had trxs
-        if (block != null && block.transactions != null) {
-
-            // loop trough block's trxs
-            for (let txHash of block.transactions) { // check trxhash here!!
-                let tx = await this.web3.eth.getTransaction(txHash);
-                console.log('Transaction found on block: ' + number);
-                console.log({address: tx.from, value: this.web3.utils.fromWei(tx.value, 'ether'), timestamp: new Date()});
-            } // end for
+        if ( block == null ) {
+            console.log('Could not find a block');
+        } else {
+            let number = block.number;
+            console.log('Finding a block ' + number);
             
-        } // end if
-    } // end function
+            // if the block was found and had trxs
+            if (block != null && block.transactions != null) {
 
+                // loop trough block's trxs
+                for (let txHash of block.transactions) { // check trxhash here!!
+                    let tx = await this.web3.eth.getTransaction(txHash);
+                    console.log('Transaction found on block: ' + number);
+                    console.log({address: tx.from, value: this.web3.utils.fromWei(tx.value, 'ether'), timestamp: new Date()});
+                } // end for
+                
+            } // end if
+        } // end else
+
+    } // end function
 } // end class
 
 module.exports.checkingTRX = checkingTRX;
