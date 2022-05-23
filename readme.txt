@@ -9,6 +9,7 @@
 
 ********************** More Infornations **********************
 
+- infura --> it is a provider for ethereum network, with diffrent endpoints.
 - web3.eth --> holds the ethereum blockchain related functions.
 - web3.utils --> holds the utility functions that help in working with the blockchain.
 - web3.utils.fromWei and web3.utils.toWei --> convert one util to another.
