@@ -7,6 +7,7 @@ class checkingTRXWS {
     account;
     subscription;
 
+    // for haveing better connection use WebSocketProvider
     constructor(projectId, account) {
         this.web3ws = new Web3(new Web3.providers.WebsocketProvider('wss://rinkeby.infura.io/ws/v3/' + projectId));
         this.web3 = new Web3(new Web3.providers.HttpProvider('https://rinkeby.infura.io/v3/' + projectId));
@@ -33,7 +34,8 @@ class checkingTRXWS {
                 }
             }, 60000)
         });
-    }
+    } // end function 
+
 } // end class
 
 module.exports.checkingTRXWS = checkingTRXWS;
