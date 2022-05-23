@@ -2,6 +2,6 @@
 2- clone the repo
 3- write these commands in terminal:
     1- npm install web3
-    2- node main.js
+    2- node src/main.js
     
     *** main.js is a file for testing
